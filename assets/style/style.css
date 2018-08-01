@@ -1,0 +1,29 @@
+
+.jumbo {
+    color: white;
+    background-image: url(../images/train.jpg);
+    background-size: 100%;
+    background-position: center;
+    height: 500px;
+}
+
+.card-header-style {
+    color: white;
+    background-color: #9D8765;
+}
+
+.background-style {
+    background-color: #605B51;
+}
+
+.card-body-style {
+    background-color: #97AFAF;
+}
+
+
+
+
+
+
+
+

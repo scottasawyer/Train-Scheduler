@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Train Scheduler</title>
+    <link rel="stylesheet" href="./assets/style/reset.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/style/style.css"/>
+
+</head>
+
+<body class="background-style">
+
+    <div class="container">
+
+        <div class="jumbotron container jumbo">
+            <h1 class="display-4">Planes, Trains, and Automobiles</h1>
+            <p class="lead text-center">But more specifically, just TRAINS!</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header card-header-style">Train Schedule</div>
+            <div class="card-body card-body-style">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="display-new-row">
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+
+        <br>
+
+        <div class="card">
+            <div class="card-header card-header-style">Add Train Here</div>
+            <div class="card-body card-body-style">
+                <form>
+
+                    <div class="form-group">
+                        <label for="display-train-name">Train Name</label>
+                        <input type="text" class="form-control" id="display-train-name" placeholder="Runaway Train">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="display-destination">Destination</label>
+                        <input type="text" class="form-control" id="display-destination" placeholder="Never Coming Back">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="display-first-train-time">First Train Time</label>
+                        <input type="text" class="form-control" id="display-first-train-time" aria-describedby="helpNote" placeholder="14:46">
+                        <small id="helpNote" class="form-text text-muted">Please enter in 24-hour format (HH:mm)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="display-frequency">Frequency (min)</label>
+                        <input type="text" class="form-control" id="display-frequency" placeholder="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+    <!-- JQuery + Moment JS + Firebase + Local JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://rawgit.com/moment/moment/2.22.2/min/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script type="text/javascript" src="assets/js/javascript.js"></script>
+
+    <!-- Firebase -->
+
+    
+</body>
+
+</html>
