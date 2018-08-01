@@ -32,11 +32,11 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-// 2. Button for adding train lines
+//adding train lines
 $("#add-train-btn").on("click", function (event) {
     event.preventDefault();
 
-    // Grabs user input
+
     trainName = $("#display-train-name").val().trim();
     trainDestination = $("#display-destination").val().trim();
     trainTime = $("#display-first-train-time").val().trim();
@@ -45,8 +45,6 @@ $("#add-train-btn").on("click", function (event) {
     if (!trainName) {
 
     } else {
-
-        // LOGIC
 
         // sets timeNow when you click submit
         timeNow = moment().format("YYYY/MM/DD kk:mm");
@@ -59,15 +57,14 @@ $("#add-train-btn").on("click", function (event) {
 
         checkTime();
 
-        // formats times as Moment elements, so we can run the .diff function
         var userTimeFormatted = moment(new Date(userTime));
         var timeNowFormatted = moment(new Date(timeNow));
 
-        // gets difference between Next Train Coming and timeNow | prints as __ hrs __ mins
+        // gets difference between Next Train Coming and timeNow
         var timeDifference = moment.duration(userTimeFormatted.diff(timeNowFormatted));
-        var hoursRemaining = Math.floor(timeDifference.asHours()); // floor bc don't want decimals (i.e. minutes)
+        var hoursRemaining = Math.floor(timeDifference.asHours());
         var minutesRemainingUnchanged = timeDifference.asMinutes();
-        var minutesRemaining = minutesRemainingUnchanged - (hoursRemaining * 60); // keeps minutes under 60
+        var minutesRemaining = minutesRemainingUnchanged - (hoursRemaining * 60);
 
         // combines hrs and mins into a string
         var timeRemaining;
@@ -78,7 +75,6 @@ $("#add-train-btn").on("click", function (event) {
         }
 
 
-        // Creates local "temporary" object for holding train data
         var newTrain = {
             name: trainName,
             destination: trainDestination,
@@ -88,10 +84,10 @@ $("#add-train-btn").on("click", function (event) {
         };
     };
 
-    // Uploads train data to firebase (database) - using PUSH instead of SET
+    // Uploads train data to firebase 
     database.ref().push(newTrain);
 
-    // Clears all of the inputs
+    // Clears all of the input fields
     $("#display-train-name").val("");
     $("#display-destination").val("");
     $("#display-first-train-time").val("");
@@ -100,7 +96,7 @@ $("#add-train-btn").on("click", function (event) {
 
 });
 
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
+
 database.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
 
