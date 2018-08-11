@@ -6,6 +6,10 @@ WELL NOW YOU CAN!! You have complete control over the train name, destination, w
 
 Pretty great, huh?
 
+## Deployment
+
+You can see this in action here: https://scottasawyer.github.io/Train-Scheduler/
+
 ## Installation
 1. `git clone` the repo.
 2. Open `index.html` in your favorite browser.
